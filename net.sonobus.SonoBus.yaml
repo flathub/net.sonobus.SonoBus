@@ -31,5 +31,8 @@ modules:
         url: https://github.com/sonosaurus/sonobus/
         tag: '1.4.5'
         commit: 52cb09f046b94ba2d5d9d47e85c8d9789d86c96e
+        x-checker-data:
+          type: git
+          tag-pattern: ([\d.]+)$
       - type: file
         path: net.sonobus.SonoBus.metainfo.xml
