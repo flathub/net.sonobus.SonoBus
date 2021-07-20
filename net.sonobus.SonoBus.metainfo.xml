@@ -43,11 +43,12 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="1.4.6" date="2021-07-20"/>
         <release version="1.4.3" date="2021-04-02">
             <description>
                 <p>New features:</p>
                 <ul>
-                    <li>Multi-channel (>2) support added.</li>
+                    <li>Multi-channel (&gt;2) support added.</li>
                     <li>Input Mixer added to control how the inputs are mixed and grouped for sending and for monitoring.</li>
                     <li>Input effects are now per channel as configured by grouping.</li>
                     <li>Full gate/compressor/eq effects now available per user track (and even per channel there if desired)</li>
@@ -78,4 +79,4 @@
             </description>
         </release>
   </releases>
-</component> 
+</component>
