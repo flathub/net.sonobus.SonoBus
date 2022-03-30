@@ -1,7 +1,7 @@
 app-id: net.sonobus.SonoBus
 runtime: org.gnome.Platform
 sdk: org.gnome.Sdk
-runtime-version: '40'
+runtime-version: '42'
 command: sonobus
 finish-args:
   - --share=ipc
@@ -29,8 +29,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/sonosaurus/sonobus/
-        tag: 1.4.6
-        commit: 80d1e5a974e2b4e7a5b2f1f7f1a6d047c08ddbb5
+        tag: 1.5.1
+        commit: 47ed1cfaaee634f26d206a0727cb089319b4ae8d
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
