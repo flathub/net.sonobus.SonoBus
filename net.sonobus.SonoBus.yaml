@@ -1,7 +1,7 @@
 app-id: net.sonobus.SonoBus
-runtime: org.gnome.Platform
-sdk: org.gnome.Sdk
-runtime-version: '42'
+runtime: org.freedesktop.Platform
+sdk: org.freedesktop.Sdk
+runtime-version: '21.08'
 command: sonobus
 finish-args:
   - --share=ipc
@@ -15,6 +15,9 @@ finish-args:
   - --filesystem=xdg-run/pipewire-0
   - --system-talk-name=org.freedesktop.RealtimeKit1
 
+cleanup:
+  - /bin/alsa*
+  - /bin/jack*
 modules:
   - shared-modules/linux-audio/jack2.json
 
