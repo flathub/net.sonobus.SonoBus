@@ -1,7 +1,7 @@
 app-id: net.sonobus.SonoBus
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: '21.08'
+runtime-version: '22.08'
 command: sonobus
 finish-args:
   - --share=ipc
@@ -18,18 +18,13 @@ finish-args:
 add-extensions:
   org.freedesktop.LinuxAudio.Plugins.SonoBus:
     directory: extensions/Plugins/SonoBus
-    version: '21.08'
+    version: '22.08'
     add-ld-path": lib
     bundle: true
     subdirectories: true
     no-autodownload: true
     autodelete: false
-cleanup:
-  - /bin/alsa*
-  - /bin/jack*
 modules:
-  - shared-modules/linux-audio/jack2.json
-
   - name: SonoBus
     buildsystem: cmake-ninja
     post-install:
@@ -52,6 +47,8 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
+      - type: patch
+        path: patches/juce-header.patch
       - type: file
         path: net.sonobus.SonoBus.metainfo.xml
       - type: file
