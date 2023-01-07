@@ -37,13 +37,15 @@ modules:
       - install -d ${FLATPAK_DEST}/extensions/Plugins/SonoBus/vst3
       - cp -R SonoBus_artefacts/VST3/*.vst3 ${FLATPAK_DEST}/extensions/Plugins/SonoBus/vst3
       - cp -R SonoBusInst_artefacts/VST3/*.vst3 ${FLATPAK_DEST}/extensions/Plugins/SonoBus/vst3
-      - install -Dm644 -t ${FLATPAK_DEST}/extensions/Plugins/SonoBus/share/metainfo org.freedesktop.LinuxAudio.Plugins.SonoBus.metainfo.xml
-      - appstream-compose --basename=org.freedesktop.LinuxAudio.Plugins.SonoBus --prefix=${FLATPAK_DEST}/extensions/Plugins/SonoBus --origin=flatpak org.freedesktop.LinuxAudio.Plugins.SonoBus
+      - install -Dm644 -t ${FLATPAK_DEST}/extensions/Plugins/SonoBus/share/metainfo
+        org.freedesktop.LinuxAudio.Plugins.SonoBus.metainfo.xml
+      - appstream-compose --basename=org.freedesktop.LinuxAudio.Plugins.SonoBus --prefix=${FLATPAK_DEST}/extensions/Plugins/SonoBus
+        --origin=flatpak org.freedesktop.LinuxAudio.Plugins.SonoBus
     sources:
       - type: git
         url: https://github.com/sonosaurus/sonobus/
-        tag: 1.5.1
-        commit: 47ed1cfaaee634f26d206a0727cb089319b4ae8d
+        tag: 1.6.0
+        commit: 6b293efbd4979ff7d51592f9ea7d480dd5db3f8c
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
