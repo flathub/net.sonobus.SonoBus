@@ -44,8 +44,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/sonosaurus/sonobus/
-        tag: 1.6.1
-        commit: c7f966aad950de42e84f173eeb27207f114fe0b5
+        tag: 1.6.2
+        commit: 404bbb407c28e0e4f551e4d53e40be5c7301126d
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
