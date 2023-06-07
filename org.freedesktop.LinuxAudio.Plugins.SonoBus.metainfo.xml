@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<component type="addon">
     <id>org.freedesktop.LinuxAudio.Plugins.SonoBus</id>
     <extends>net.sonobus.SonoBus</extends>
     <name>SonoBus VST3</name>
