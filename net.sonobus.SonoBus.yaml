@@ -1,7 +1,7 @@
 app-id: net.sonobus.SonoBus
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: '22.08'
+runtime-version: '23.08'
 command: sonobus
 finish-args:
   - --share=ipc
@@ -13,12 +13,11 @@ finish-args:
   - --filesystem=xdg-music
 # Jack
   - --filesystem=xdg-run/pipewire-0
-  - --system-talk-name=org.freedesktop.RealtimeKit1
 
 add-extensions:
   org.freedesktop.LinuxAudio.Plugins.SonoBus:
     directory: extensions/Plugins/SonoBus
-    version: '22.08'
+    version: '23.08'
     add-ld-path": lib
     bundle: true
     subdirectories: true
