@@ -36,6 +36,9 @@ modules:
       - install -d ${FLATPAK_DEST}/extensions/Plugins/SonoBus/vst3
       - cp -R SonoBus_artefacts/VST3/*.vst3 ${FLATPAK_DEST}/extensions/Plugins/SonoBus/vst3
       - cp -R SonoBusInst_artefacts/VST3/*.vst3 ${FLATPAK_DEST}/extensions/Plugins/SonoBus/vst3
+      # LV2 plugin
+      - install -d ${FLATPAK_DEST}/extensions/Plugins/SonoBus/lv2
+      - cp -R SonoBus_artefacts/LV2/*.lv2 ${FLATPAK_DEST}/extensions/Plugins/SonoBus/lv2
       - install -Dm644 -t ${FLATPAK_DEST}/extensions/Plugins/SonoBus/share/metainfo
         org.freedesktop.LinuxAudio.Plugins.SonoBus.metainfo.xml
       - appstream-compose --basename=org.freedesktop.LinuxAudio.Plugins.SonoBus --prefix=${FLATPAK_DEST}/extensions/Plugins/SonoBus
@@ -48,8 +51,6 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
-      - type: patch
-        path: patches/juce-header.patch
       - type: file
         path: net.sonobus.SonoBus.metainfo.xml
       - type: file

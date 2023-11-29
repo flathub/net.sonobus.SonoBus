@@ -2,13 +2,13 @@
 <component type="addon">
     <id>org.freedesktop.LinuxAudio.Plugins.SonoBus</id>
     <extends>net.sonobus.SonoBus</extends>
-    <name>SonoBus VST3</name>
-    <summary>Free and open source network audio streaming, VST3 plugins</summary>
+    <name>SonoBus LV2/VST3</name>
+    <summary>Free and open source network audio streaming, LV2 and VST3 plugins</summary>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0</project_license>
     <description>
         <p>
-            This is the VST3 plugins package for SonoBus.
+            This is the LV2 and VST3 plugins package for SonoBus.
         </p>
         <p>
             SonoBus is an application for streaming high-quality, low-latency peer-to-peer
@@ -26,7 +26,7 @@
         <p>
             All settings are dynamic, network statistics are clearly visible.
             Works as a standalone application on macOS, Windows, iOS, and GNU/Linux, and as
-            an audio plugin (AU, VST, and AAX) on macOS and Windows. Use it on your desktop
+            an audio plugin (LV2 and VST3). Use it on your desktop
             or in your DAW, or on your mobile device.
         </p>
         <p>
@@ -46,6 +46,7 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="1.7.0" date="2023-11-28"/>
         <release version="1.6.2" date="2023-02-26"/>
         <release version="1.6.1" date="2023-01-19"/>
         <release version="1.6.0" date="2023-01-07"/>
