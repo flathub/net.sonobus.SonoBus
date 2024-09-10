@@ -1,7 +1,7 @@
 app-id: net.sonobus.SonoBus
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: '23.08'
+runtime-version: '24.08'
 command: sonobus
 finish-args:
   - --share=ipc
@@ -17,12 +17,16 @@ finish-args:
 add-extensions:
   org.freedesktop.LinuxAudio.Plugins.SonoBus:
     directory: extensions/Plugins/SonoBus
-    version: '23.08'
+    version: '24.08'
     add-ld-path": lib
     bundle: true
     subdirectories: true
     no-autodownload: true
     autodelete: false
+build-options:
+  env:
+    PLUGINS_DIR: /app/extensions/Plugins/SonoBus
+    PLUGINS_ID: org.freedesktop.LinuxAudio.Plugins.SonoBus
 modules:
   - name: SonoBus
     buildsystem: cmake-ninja
@@ -41,8 +45,7 @@ modules:
       # - cp -R SonoBus_artefacts/LV2/*.lv2 ${FLATPAK_DEST}/extensions/Plugins/SonoBus/lv2
       - install -Dm644 -t ${FLATPAK_DEST}/extensions/Plugins/SonoBus/share/metainfo
         org.freedesktop.LinuxAudio.Plugins.SonoBus.metainfo.xml
-      - appstream-compose --basename=org.freedesktop.LinuxAudio.Plugins.SonoBus --prefix=${FLATPAK_DEST}/extensions/Plugins/SonoBus
-        --origin=flatpak org.freedesktop.LinuxAudio.Plugins.SonoBus
+      - appstreamcli compose --components=${PLUGINS_ID} --prefix=/ --origin=${PLUGINS_ID} --result-root=${PLUGINS_DIR} --data-dir=${PLUGINS_DIR}/share/app-info/xmls ${PLUGINS_DIR}
     sources:
       - type: git
         url: https://github.com/sonosaurus/sonobus/
