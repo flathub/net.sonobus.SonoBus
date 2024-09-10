@@ -6,6 +6,7 @@
     <summary>Free and open source network audio streaming</summary>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0</project_license>
+    <developer_name>SonoBus Developers</developer_name>
     <description>
         <p>
             SonoBus is an application for streaming high-quality, low-latency peer-to-peer
@@ -39,6 +40,7 @@
     <screenshots>
         <screenshot type="default">
             <image>https://sonobus.net/assets/images/sonobus_screenshot.png</image>
+            <caption>Main window</caption>
         </screenshot>
     </screenshots>
     <content_rating type="oars-1.1"/>
