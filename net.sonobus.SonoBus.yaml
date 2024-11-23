@@ -11,8 +11,10 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=xdg-download
   - --filesystem=xdg-music
-# Jack
+  # Jack
   - --filesystem=xdg-run/pipewire-0
+  # JUCE just doesn't care about XDG
+  - --persist=.config
 
 add-extensions:
   org.freedesktop.LinuxAudio.Plugins.SonoBus:
