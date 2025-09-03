@@ -1,7 +1,7 @@
 app-id: net.sonobus.SonoBus
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: '24.08'
+runtime-version: '25.08'
 command: sonobus
 finish-args:
   - --share=ipc
@@ -19,7 +19,7 @@ finish-args:
 add-extensions:
   org.freedesktop.LinuxAudio.Plugins.SonoBus:
     directory: extensions/Plugins/SonoBus
-    version: '24.08'
+    version: '25.08'
     add-ld-path": lib
     bundle: true
     subdirectories: true
