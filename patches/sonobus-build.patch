@@ -1,0 +1,29 @@
+diff --git a/Source/VersionInfo.cpp b/Source/VersionInfo.cpp
+index 85df69ac..be0fcd85 100644
+--- a/Source/VersionInfo.cpp
++++ b/Source/VersionInfo.cpp
+@@ -116,5 +116,5 @@ std::unique_ptr<VersionInfo> VersionInfo::fetch (const String& endpoint)
+         }
+     }
+ 
+-    return std::unique_ptr<VersionInfo> (new VersionInfo ({ versionString, releaseNotes, std::move (parsedAssets) }));
++    return std::make_unique<VersionInfo> (versionString, releaseNotes, std::move (parsedAssets));
+ }
+diff --git a/Source/VersionInfo.h b/Source/VersionInfo.h
+index 34dc25f1..28c273e9 100644
+--- a/Source/VersionInfo.h
++++ b/Source/VersionInfo.h
+@@ -26,6 +26,13 @@ public:
+     const String releaseNotes;
+     const std::vector<Asset> assets;
+ 
++  VersionInfo(const String versionString,
++              const String releaseNotes,
++              const std::vector<Asset>&& assets)
++    : versionString(versionString)
++    , releaseNotes(releaseNotes)
++    , assets(assets)
++  {}
+ private:
+     VersionInfo() = default;
+ 
