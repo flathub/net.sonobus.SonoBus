@@ -1,7 +1,7 @@
 app-id: net.sonobus.SonoBus
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: '25.08'
+runtime-version: '26.08'
 command: sonobus
 finish-args:
   - --share=ipc
@@ -19,7 +19,7 @@ finish-args:
 add-extensions:
   org.freedesktop.LinuxAudio.Plugins.SonoBus:
     directory: extensions/Plugins/SonoBus
-    version: '25.08'
+    version: '26.08'
     add-ld-path": lib
     bundle: true
     subdirectories: true
@@ -30,6 +30,7 @@ build-options:
     PLUGINS_DIR: /app/extensions/Plugins/SonoBus
     PLUGINS_ID: org.freedesktop.LinuxAudio.Plugins.SonoBus
 modules:
+  - shared-modules/appstream/appstream-compose.json
   - name: SonoBus
     buildsystem: cmake-ninja
     post-install:
@@ -56,6 +57,8 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
+      - type: patch
+        path: patches/sonobus-build.patch
       - type: file
         path: net.sonobus.SonoBus.metainfo.xml
       - type: file
